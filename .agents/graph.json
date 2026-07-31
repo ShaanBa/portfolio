@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "graph_id": "portfolio_pipeline",
+  "version": "1.0.0",
+  "description": "Deterministic DAG workflow for portfolio content validation, style compilation, component building, and site build verification.",
+  "nodes": [
+    {
+      "id": "schema_validation",
+      "type": "validator",
+      "description": "Validates raw JSON data nodes against Zod schemas in src/content.config.ts",
+      "depends_on": [],
+      "inputs": [
+        "src/content/**/*.json",
+        "src/content.config.ts"
+      ],
+      "outputs": [
+        ".cache/schema_validation.status"
+      ],
+      "action": "npm run check:schemas"
+    },
+    {
+      "id": "token_compiler",
+      "type": "compiler",
+      "description": "Ensures design tokens in src/styles/tokens.css are cleanly bound into global styles",
+      "depends_on": [],
+      "inputs": [
+        "src/styles/tokens.css"
+      ],
+      "outputs": [
+        "src/styles/global.css"
+      ],
+      "action": "npm run build:tokens"
+    },
+    {
+      "id": "component_builder",
+      "type": "ui_generator",
+      "description": "Validates Astro static components and React islands against design tokens and content schemas",
+      "depends_on": [
+        "schema_validation",
+        "token_compiler"
+      ],
+      "inputs": [
+        "src/components/astro/**/*",
+        "src/components/react/**/*",
+        "src/content.config.ts"
+      ],
+      "outputs": [
+        ".cache/component_check.status"
+      ],
+      "action": "npx astro check"
+    },
+    {
+      "id": "site_bundler",
+      "type": "bundler",
+      "description": "Compiles static site assets into dist/ directory",
+      "depends_on": [
+        "component_builder"
+      ],
+      "inputs": [
+        "src/**/*",
+        "astro.config.mjs"
+      ],
+      "outputs": [
+        "dist/"
+      ],
+      "action": "npx astro build"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "category": "Languages",
+    "skills": [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "C#",
+      "SQL",
+      "HTML/CSS"
+    ]
+  },
+  {
+    "category": "Frameworks & Libraries",
+    "skills": [
+      "React 19",
+      "Next.js",
+      "Astro",
+      "Fastify",
+      "Flask",
+      "ASP.NET Core MVC",
+      "Drizzle ORM",
+      "ADO.NET"
+    ]
+  },
+  {
+    "category": "Databases & Storage",
+    "skills": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB"
+    ]
+  },
+  {
+    "category": "AI, Cloud & Infrastructure",
+    "skills": [
+      "Gemini Vision API",
+      "XRP Ledger",
+      "Stripe API",
+      "Vercel",
+      "Railway",
+      "Hetzner",
+      "Git / GitHub"
+    ]
+  }
+]

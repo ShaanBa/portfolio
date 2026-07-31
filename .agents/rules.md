@@ -48,3 +48,14 @@ You are building an experimental, high-end Emerald portfolio site. All UI genera
   - Are there generic AI slop traits (e.g., soft purple cards, Inter font)? -> **REJECT**.
   - Is the typographic scale contrast sufficiently extreme? -> **VERIFY**.
   - Are structural borders aligned asynchronously? -> **VERIFY**.
+
+---
+
+## 5. REPOSITORY STRUCTURE & SSOT BOUNDARY CONSTRAINTS
+
+- **ROOT ARTIFACT BAN:** Agents are STRICTLY FORBIDDEN from generating or creating root-level data files (`*.json`), root-level stylesheets (`*.css`), or root-level schema declarations (`zod.ts`). All raw content and schemas MUST reside within designated Single Source of Truth (SSOT) subdirectories under `src/`.
+- **CONTENT SSOT BOUNDARY:** All structured application data (projects, experience, skills) MUST be maintained exclusively inside Astro Content Collections in `src/content/` (`projects/`, `experience/`, `skills/`). No duplicate or loose data directories (such as `src/data/` or root JSONs) are permitted.
+- **STYLE SSOT BOUNDARY:** Design tokens MUST be defined exclusively in `src/styles/tokens.css` and imported into `src/styles/global.css`. Direct inline variable redeclarations, loose root stylesheets, or compiled reference CSS files (`compiled-portfolio-styles.css`) MUST NOT be generated or created.
+- **SCHEMA & COLLECTION CONFIG SSOT:** All Zod schemas (`ProjectSchema`, `ExperienceSchema`, `SkillTreeSchema`, etc.) and Content Collections definitions MUST be declared and exported from `src/content.config.ts`. Relocating schemas to loose root files or creating duplicate Zod files is strictly prohibited.
+- **NO DIRECT COMPILED ARTIFACT EDITING:** Agents MUST NOT directly edit compiled artifacts or build outputs in `dist/` or `.astro/`. All changes MUST target source files in `src/`.
+

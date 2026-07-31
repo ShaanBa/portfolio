@@ -1,27 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap');
-
-:root {
-  --blue: #1f8a5c;
-  --blue-dark: #166b47;
-  --ink: #eef2ec;
-  --ink-soft: #93a196;
-  --paper: #0d1310;
-  --panel: #141d18;
-  --border: #35473d;
-  --shadow: #050908;
-  --deep: #070b09;
-
-  /* Aliases for compatibility */
-  --bg-base: var(--paper);
-  --surface-panel: var(--panel);
-  --surface-chip: var(--paper);
-  --primary-accent: var(--blue);
-  --border-outline: var(--border);
-  --shadow-panel: 4px 4px 0 var(--shadow);
-  
-  --font-header: 'Inter', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
-}
+@import "./tokens.css";
 
 * {
   box-sizing: border-box;
