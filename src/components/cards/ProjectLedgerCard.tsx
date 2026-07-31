@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectSchema, type Project } from '../content.config';
+import { ProjectSchema, type Project } from '../../content.config';
 
 export interface ProjectLedgerCardProps {
   project: Project;

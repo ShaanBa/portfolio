@@ -16,7 +16,7 @@
       "outputs": [
         ".cache/schema_validation.status"
       ],
-      "action": "npm run check:schemas"
+      "action": "npx tsc --noEmit"
     },
     {
       "id": "token_compiler",
@@ -34,36 +34,36 @@
     {
       "id": "component_builder",
       "type": "ui_generator",
-      "description": "Validates Astro static components and React islands against design tokens and content schemas",
+      "description": "Validates React components and TSX files against design tokens and content schemas",
       "depends_on": [
         "schema_validation",
         "token_compiler"
       ],
       "inputs": [
-        "src/components/astro/**/*",
-        "src/components/react/**/*",
+        "src/components/**/*",
         "src/content.config.ts"
       ],
       "outputs": [
         ".cache/component_check.status"
       ],
-      "action": "npx astro check"
+      "action": "npx tsc --noEmit"
     },
     {
       "id": "site_bundler",
       "type": "bundler",
-      "description": "Compiles static site assets into dist/ directory",
+      "description": "Compiles site assets into dist/ directory via Vite",
       "depends_on": [
         "component_builder"
       ],
       "inputs": [
         "src/**/*",
-        "astro.config.mjs"
+        "vite.config.ts",
+        "index.html"
       ],
       "outputs": [
         "dist/"
       ],
-      "action": "npx astro build"
+      "action": "npx vite build"
     }
   ]
 }

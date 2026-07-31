@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExperienceSchema, type Experience } from '../content.config';
+import { ExperienceSchema, type Experience } from '../../content.config';
 
 export interface ExperienceCardProps {
   experience: Experience;

@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles/global.css';
-import Hero from './components/Hero';
-import ProjectLedgerCard from './components/ProjectLedgerCard';
-import ExperienceCard from './components/ExperienceCard';
-import SkillsBlock from './components/SkillsBlock';
+import Hero from './components/sections/Hero';
+import ProjectLedgerCard from './components/cards/ProjectLedgerCard';
+import ExperienceCard from './components/cards/ExperienceCard';
+import SkillsBlock from './components/sections/SkillsBlock';
 import { type Project, type Experience, type SkillTree } from './content.config';
 
 import betOnMeData from './content/projects/bet-on-me.json';

@@ -4,6 +4,7 @@ node_modules/
 # build outputs
 dist/
 .astro/
+.cache/
 
 # environment & logs
 .env
@@ -12,3 +13,12 @@ dist/
 
 # shared state scratch
 shared_state/
+
+# agent execution runs
+.agents/auditor_*
+.agents/worker_*
+.agents/explorer_*
+.agents/challenger_*
+.agents/orchestrator
+.agents/reviewer_*
+.agents/sentinel
