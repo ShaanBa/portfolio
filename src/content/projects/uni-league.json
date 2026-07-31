@@ -3,6 +3,9 @@
   "title": "Uni-League: Collegiate LoL Leaderboard",
   "url": "https://uni-league.vercel.app",
   "summary": "Collegiate League of Legends leaderboard featuring dynamic email university grouping, custom profile icon verification, and a continuous scalar rank-sorting engine.",
+  "problem": "Collegiate esports players lacked a unified platform to verify account ownership seamlessly and compete across university-specific and national leaderboards.",
+  "approach": "I built a Flask and React application featuring custom profile icon verification challenges, dynamic domain tenant allocation, and a scalar SQL ranking engine.",
+  "outcome": "Deployed a live web application providing automated collegiate tenant grouping and League of Legends leaderboard tracking.",
   "techStack": [
     "Python",
     "Flask",

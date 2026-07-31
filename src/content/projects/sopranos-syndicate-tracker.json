@@ -3,6 +3,9 @@
   "title": "The Sopranos Syndicate Tracker",
   "url": "https://drive.google.com/file/d/1eBcHSKU0dQwAh9oXOp5Hl4RFjuAoBh1w/view?usp=sharing",
   "summary": "FBI intelligence dashboard built with ASP.NET Core MVC and MySQL to model organized crime hierarchies, multi-table associate networks, and financial collection logs.",
+  "problem": "Law enforcement intelligence operations require tracking complex, multi-tiered criminal syndicates and revenue flows without relying on unstructured or flat data models.",
+  "approach": "I designed a normalized 6-table relational MySQL schema and developed an ASP.NET Core MVC application with ADO.NET analytical queries for dynamic financial aggregation.",
+  "outcome": "Delivered a fully containerized intelligence platform deployed to Railway featuring real-time organizational analytics.",
   "techStack": [
     "C#",
     "ASP.NET Core MVC",
