@@ -1,0 +1,118 @@
+---
+import { SkillTreeSchema, type SkillTree } from '../../zod';
+
+interface Props {
+  skills: SkillTree;
+}
+
+const { skills } = Astro.props;
+const validated = SkillTreeSchema.parse(skills);
+
+// Chunk into pairs of 2 for grid-2 rows
+const rows: SkillTree[] = [];
+for (let i = 0; i < validated.length; i += 2) {
+  rows.push(validated.slice(i, i + 2));
+}
+---
+
+<div class="skills-wrapper panel">
+  {rows.map((row) => (
+    <div class="grid-2">
+      {row.map((cat) => (
+        <div class="skill-cell">
+          <div class="field-label font-mono">{cat.category}</div>
+          <div class="pill-row font-mono">
+            {cat.skills.map((skill) => (
+              <div class="pill on">{skill}</div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  ))}
+</div>
+
+<style>
+  .skills-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-panel);
+    border: 2px solid var(--border-outline);
+    box-shadow: var(--shadow-panel);
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 2px solid var(--border-outline);
+  }
+
+  .skills-wrapper > .grid-2:first-child {
+    border-top: none;
+  }
+
+  @media (min-width: 640px) {
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .skill-cell {
+    border-right: 2px solid var(--border-outline);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .grid-2 .skill-cell:last-child {
+    border-right: none;
+  }
+
+  .field-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    border-bottom: 2px solid var(--border-outline);
+    padding: 9px 16px;
+    background: var(--bg-base);
+    margin: -22px -22px 0;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .pill {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border: 1.5px solid var(--border-outline);
+    background: var(--bg-base);
+    color: var(--ink-soft);
+  }
+
+  .pill.on {
+    background: var(--primary-accent);
+    color: #ffffff;
+    border-color: var(--primary-accent);
+  }
+
+  @media (max-width: 640px) {
+    .skill-cell {
+      border-right: none;
+      border-bottom: 2px solid var(--border-outline);
+    }
+    .skill-cell:last-child {
+      border-bottom: none;
+    }
+  }
+</style>

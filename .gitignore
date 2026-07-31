@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# build outputs
+dist/
+.astro/
+
+# environment & logs
+.env
+*.log
+.DS_Store
+
+# shared state scratch
+shared_state/

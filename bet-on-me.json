@@ -1,0 +1,23 @@
+{
+  "id": "bet-on-me",
+  "title": "BetOnMe (HackKU26 MLH Winner)",
+  "url": "https://bet-on-me-hack-ku-26.vercel.app",
+  "summary": "Decentralized self-accountability platform using XRP Ledger escrows to route failed stakes to charity, backed by EXIF/GPS proof verification and Gemini Vision.",
+  "techStack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "XRP Ledger",
+    "MongoDB",
+    "Gemini API",
+    "Vercel"
+  ],
+  "designChoices": [
+    "Non-Custodial XRPL Escrows: Implemented native EscrowCreate, EscrowFinish, and EscrowCancel primitives targeting charity wallet addresses directly so the platform never holds user funds.",
+    "Automated Proof Pipeline: Integrated Gemini Vision API with custom EXIF/GPS metadata parsers featuring hemisphere-aware coordinate fixes and timestamp fallbacks.",
+    "Lazy On-Chain Settlement: Designed an on-demand resolution flow executed during app load to finalize past-due bets without background worker crons.",
+    "Multi-Week Recurring Contracts: Structured pooled-stake escrows covering multi-session commitments where a single missed check-in forfeits the pool to charity."
+  ],
+  "githubUrl": "https://github.com/alexhlanter/BetOnMeHackKU26",
+  "completionDate": "April 2026"
+}

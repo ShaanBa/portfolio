@@ -1,0 +1,396 @@
+---
+import "../styles/global.css";
+import Hero from "../components/Hero.astro";
+import ProjectLedgerCard from "../components/ProjectLedgerCard.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import SkillsBlock from "../components/SkillsBlock.astro";
+
+import rockCityData from "../data/projects/rock-city-pms.json";
+import uniLeagueData from "../data/projects/uni-league.json";
+import betOnMeData from "../data/projects/bet-on-me.json";
+import sopranosData from "../data/projects/sopranos-syndicate-tracker.json";
+
+import sweInternData from "../data/experience/rock-city-swe-intern.json";
+import opsLeadData from "../data/experience/rock-city-ops-lead.json";
+import opsAssociateData from "../data/experience/rock-city-ops-associate.json";
+
+import skillsData from "../data/skills.json";
+
+const projects = [
+  {
+    id: "rock-city",
+    title: "Rock City Motel PMS & Direct-Booking Site",
+    category: "Dual-Database Architecture",
+    summary: "Full-stack PMS and direct-booking site for a 16-room motel — modernizing paper ops with a live room dashboard, multi-channel intake, and direct Stripe payments to bypass third-party fees.",
+    bullets: [
+      "ACID transactions make double-bookings structurally impossible",
+      "Dual-database bridge isolates staff LAN from the public booking site",
+      "Fork-on-edit pattern for live guest record changes"
+    ],
+    techStack: ["TypeScript", "React 19", "Next.js 16", "Fastify", "PostgreSQL", "Drizzle ORM", "Stripe"],
+    url: rockCityData.url || "#"
+  },
+  {
+    id: "uni-league",
+    title: "Uni-League: Collegiate LoL Leaderboard",
+    category: "Real-Time Ranking Engine",
+    summary: "Collegiate League of Legends leaderboard with automatic university grouping, custom account verification, and continuous rank sorting.",
+    bullets: [
+      "Verifies account ownership without relying on OAuth",
+      "Auto-assigns users to leaderboards by university email domain",
+      "Unified numeric scoring across non-alphabetical rank tiers"
+    ],
+    techStack: ["Python", "Flask", "React", "JavaScript", "PostgreSQL", "Vite"],
+    url: uniLeagueData.url || "#"
+  },
+  {
+    id: "bet-on-me",
+    title: "BetOnMe — HackKU26 MLH Winner",
+    category: "Non-Custodial Escrow System",
+    summary: "Self-accountability platform that routes failed stakes to charity via XRP Ledger escrows, backed by EXIF/GPS and Gemini Vision proof.",
+    bullets: [
+      "Native XRPL escrows — the platform never holds user funds",
+      "Automated proof pipeline with EXIF/GPS parsing",
+      "On-demand settlement, no background workers required"
+    ],
+    techStack: ["Next.js", "React", "TypeScript", "XRP Ledger", "MongoDB", "Gemini API"],
+    url: betOnMeData.url || "#"
+  },
+  {
+    id: "sopranos",
+    title: "The Sopranos Syndicate Tracker",
+    category: "Relational Intelligence Dashboard",
+    summary: "FBI-style dashboard modeling organized crime hierarchies, associate networks, and financial collection logs.",
+    bullets: [
+      "Normalized six-table relational schema",
+      "Raw SQL validated before ADO.NET integration",
+      "Multi-table joins for crew and business revenue reporting"
+    ],
+    techStack: ["C#", "ASP.NET Core MVC", "MySQL", "ADO.NET", "Razor Views"],
+    url: sopranosData.url || "#"
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shaan Bawa — Full-Stack & Backend Engineer</title>
+    <meta
+      name="description"
+      content="Full-stack and backend engineer specializing in dual-database architectures, concurrent Postgres transaction engines, and high-reliability API systems."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Nav Header -->
+    <nav class="panel nav-bar">
+      <div class="mark font-sans">Shaan Bawa</div>
+      <div class="links font-sans">
+        <a href="#hero">Hero</a>
+        <span class="sep">&middot;</span>
+        <a href="#about">About</a>
+        <span class="sep">&middot;</span>
+        <a href="#skills">Skills</a>
+        <span class="sep">&middot;</span>
+        <a href="#work">Projects</a>
+        <span class="sep">&middot;</span>
+        <a href="#experience">Timeline</a>
+        <span class="sep">&middot;</span>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="wrap">
+      <!-- Hero -->
+      <div id="hero">
+        <Hero projectsCount={projects.length} />
+      </div>
+
+      <!-- Philosophy / About -->
+      <div class="ledger-section" id="about">
+        <div class="sec-title">
+          <span class="idx font-mono">01</span>
+          <h2 class="font-sans">Philosophy</h2>
+        </div>
+        <section class="panel">
+          <div class="field-label font-mono">Backend Precision &amp; Operational Rigor</div>
+          <div class="body-pad about">
+            <div class="about-block">
+              <h3 class="about-subtitle font-mono">Concurrency &amp; Architecture</h3>
+              <p>
+                I gravitate toward backend systems — the places where two databases have to stay in sync, where a transaction either fully completes or doesn't happen at all. At Rock City Motel I built a booking engine where Postgres EXCLUDE constraints make double-bookings structurally impossible, not just unlikely.
+              </p>
+            </div>
+            <div class="about-block">
+              <h3 class="about-subtitle font-mono">Rigor Over Noise</h3>
+              <p>
+                I'd rather get the foundation right than chase what's trendy — end-to-end TypeScript to catch errors before they hit runtime, and integrations, like routing motel payments straight through Stripe instead of a third-party OTA, that hold up because the plumbing underneath is solid.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Skills -->
+      <div class="ledger-section" id="skills">
+        <div class="sec-title">
+          <span class="idx font-mono">02</span>
+          <h2 class="font-sans">Capabilities</h2>
+        </div>
+        <div class="field-label font-mono">Stack &amp; Tools</div>
+        <SkillsBlock skills={skillsData} />
+      </div>
+
+      <!-- Projects -->
+      <div class="ledger-section" id="work">
+        <div class="sec-title">
+          <span class="idx font-mono">03</span>
+          <h2 class="font-sans">Selected Work</h2>
+        </div>
+        <div class="field-label font-mono">Project Ledger</div>
+        <div class="projects-list">
+          {projects.map((proj, idx) => (
+            <ProjectLedgerCard project={proj} index={idx + 1} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="ledger-section" id="experience">
+        <div class="sec-title">
+          <span class="idx font-mono">04</span>
+          <h2 class="font-sans">Chronology</h2>
+        </div>
+        <section class="panel">
+          <div class="field-label font-mono">Experience</div>
+          <ExperienceCard experience={sweInternData} />
+          <ExperienceCard experience={opsLeadData} />
+          <ExperienceCard experience={opsAssociateData} />
+        </section>
+      </div>
+
+      <!-- Contact -->
+      <div class="ledger-section" id="contact">
+        <div class="sec-title">
+          <span class="idx font-mono">05</span>
+          <h2 class="font-sans">Contact</h2>
+        </div>
+        <section class="panel contact-band">
+          <div class="field-label font-mono">Get in Touch</div>
+          <div class="body-pad contact-inner">
+            <h2 class="font-sans">Let's Build Something.</h2>
+            <p>
+              I'm open to backend and full-stack engineering opportunities, and I usually reply within a day.
+            </p>
+            <div class="row">
+              <a class="btn solid font-header" href="mailto:shaanbawa6@gmail.com">Email Me &rarr;</a>
+              <a class="btn font-header" href="https://github.com/ShaanBa" target="_blank" rel="noopener noreferrer">View GitHub &rarr;</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2026 Shaan Bawa
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 32px;
+  }
+
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    max-width: 960px;
+    margin: 0 auto 24px;
+    background: var(--surface-panel);
+    border: 2px solid var(--border-outline);
+    box-shadow: var(--shadow-panel);
+  }
+
+  .nav-bar .mark {
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  .nav-bar .links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+
+  .nav-bar .links a {
+    text-decoration: none;
+    color: var(--ink);
+    transition: color 0.15s ease;
+  }
+
+  .nav-bar .links a:hover {
+    color: var(--primary-accent);
+  }
+
+  .sep {
+    color: var(--ink-soft);
+    opacity: 0.5;
+  }
+
+  .panel {
+    background: var(--surface-panel);
+    border: 2px solid var(--border-outline);
+    box-shadow: var(--shadow-panel);
+  }
+
+  .field-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    border-bottom: 2px solid var(--border-outline);
+    padding: 9px 16px;
+    background: var(--bg-base);
+  }
+
+  .ledger-section {
+    position: relative;
+    margin-top: 48px;
+  }
+
+  .sec-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+  }
+
+  .sec-title .idx {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    background: var(--deep);
+    color: var(--primary-accent);
+    padding: 3px 7px;
+    border: 1px solid var(--border-outline);
+    font-weight: 700;
+  }
+
+  .sec-title h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .body-pad {
+    padding: 24px;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-subtitle {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary-accent);
+    margin: 0 0 8px;
+  }
+
+  .about p {
+    color: var(--ink-soft);
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .projects-list {
+    margin-top: 14px;
+  }
+
+  .contact-band {
+    background: var(--deep);
+  }
+
+  .contact-inner h2 {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+
+  .contact-inner p {
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+    max-width: 480px;
+    font-size: 16px;
+  }
+
+  .contact-inner .row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid var(--primary-accent);
+    color: var(--ink);
+    background: transparent;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .btn.solid {
+    background: var(--primary-accent);
+    color: #ffffff;
+  }
+
+  .btn:hover {
+    background: var(--primary-accent);
+    color: #ffffff;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px 0 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 640px) {
+    .nav-bar .links {
+      display: none;
+    }
+  }
+</style>

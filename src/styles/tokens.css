@@ -1,0 +1,27 @@
+:root {
+  --deep-imperial-emerald: #082c1d;
+  --champagne-cream: #f5f2eb;
+  --warm-brass: #d4af37;
+  --cyber-emerald: #00ff87;
+  --obsidian: #06140e;
+  --emerald-dark-surface: #0b3826;
+  --brass-muted: #aa882c;
+  --champagne-dim: #dcd8ce;
+
+  --bg-primary: #082c1d;
+  --bg-secondary: #06140e;
+  --bg-surface: #0b3826;
+  --text-primary: #f5f2eb;
+  --text-secondary: #dcd8ce;
+  --accent-brass: #d4af37;
+  --accent-brass-muted: #aa882c;
+  --accent-cyber: #00ff87;
+  --border-subtle: rgba(212, 175, 55, 0.2);
+  --border-bold: #d4af37;
+  --overlay-noise-opacity: 0.045;
+
+  --font-serif: 'Instrument Serif', 'Sentient', serif;
+  --font-display: 'Clash Display', 'Cabinet Grotesk', sans-serif;
+  --font-sans: 'Cabinet Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
+}

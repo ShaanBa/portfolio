@@ -1,0 +1,94 @@
+---
+import { ExperienceSchema, type Experience } from '../../zod';
+
+interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props;
+const validated = ExperienceSchema.parse(experience);
+
+const { id, company, role, location, period, highlights } = validated;
+---
+
+<div class="tl-row">
+  <div class="when font-mono">
+    <div class="period font-mono">{period}</div>
+    <div class="loc font-mono">{location}</div>
+  </div>
+  <div class="tl-content">
+    <h3>{role} &middot; <span class="company">{company}</span></h3>
+    <div class="highlights font-sans">
+      {highlights.map((item) => (
+        <p class="highlight-text">&bull; {item}</p>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .tl-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 20px;
+    padding: 22px 24px;
+    border-top: 2px solid var(--border-outline);
+    background: var(--surface-panel);
+  }
+
+  .tl-row:first-child {
+    border-top: none;
+  }
+
+  .when {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .period {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-accent);
+  }
+
+  .loc {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+
+  .tl-content h3 {
+    font-family: var(--font-header);
+    font-size: 17px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+
+  .company {
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+
+  .highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .highlight-text {
+    color: var(--ink-soft);
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 640px) {
+    .tl-row {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+</style>

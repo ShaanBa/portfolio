@@ -1,0 +1,12 @@
+{
+  "id": "rock-city-swe-intern",
+  "company": "Rock City Motel",
+  "role": "Software Engineer Intern",
+  "location": "Minneapolis, KS",
+  "period": "May 2026 – Present",
+  "highlights": [
+    "Built multi-tier PMS booking engine in TypeScript & Fastify, ensuring 100% ACID transaction compliance using Postgres EXCLUDE constraints to prevent double-bookings.",
+    "Engineered dual-database architecture bridging local staff network with public cloud booking API with zero state drift.",
+    "Integrated direct Stripe payment infrastructure, bypassing third-party OTA fees and handling live guest record changes with fork-on-edit pattern."
+  ]
+}
