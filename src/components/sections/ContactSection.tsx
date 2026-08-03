@@ -1,10 +1,12 @@
+import resumeUrl from '../../content/Shaan Bawa Master Resume.pdf?url';
+
 export function ContactSection() {
   return (
     <section id="contact">
       <div className="wrap">
         {/* Section header */}
         <div className="section-header-row">
-          <span className="section-badge">V</span>
+          <span className="section-badge">VI</span>
           <h2 className="section-header">SUMMONS</h2>
         </div>
 
@@ -66,6 +68,17 @@ export function ContactSection() {
               className="btn-secondary"
             >
               View GitHub →
+            </a>
+            <a
+              href="https://www.linkedin.com/in/shaan-bawa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              LinkedIn →
+            </a>
+            <a href={resumeUrl} className="btn-secondary" download>
+              Download Résumé →
             </a>
           </div>
         </div>

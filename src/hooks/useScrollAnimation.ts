@@ -9,7 +9,7 @@ export function useScrollAnimation() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const context = gsap.context(() => {
-      gsap.from('#hero h1, #hero .body-text, #hero .field-label, #hero a', {
+      gsap.from('#hero .hero-kicker, #hero h1, #hero .body-text, #hero .field-label, #hero a', {
         opacity: 0,
         y: 20,
         duration: 0.8,

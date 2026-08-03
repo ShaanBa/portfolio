@@ -10,7 +10,7 @@ export function TimelineSection({ experiences }: TimelineSectionProps) {
       <div className="wrap">
         {/* Section header */}
         <div className="section-header-row">
-          <span className="section-badge">IV</span>
+          <span className="section-badge">V</span>
           <h2 className="section-header">LINEAGE</h2>
         </div>
 

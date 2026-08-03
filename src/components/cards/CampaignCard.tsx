@@ -121,7 +121,7 @@ export function CampaignCard({ project, index }: CampaignCardProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Live Demo →
+            {project.urlLabel ?? 'Live Demo'} →
           </a>
           {project.githubUrl && (
             <a
@@ -131,6 +131,16 @@ export function CampaignCard({ project, index }: CampaignCardProps) {
               rel="noopener noreferrer"
             >
               Source Code →
+            </a>
+          )}
+          {project.devpostUrl && (
+            <a
+              className="btn-secondary"
+              href={project.devpostUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Devpost →
             </a>
           )}
         </div>

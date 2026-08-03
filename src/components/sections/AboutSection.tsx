@@ -12,26 +12,28 @@ export function AboutSection() {
         <div className="tenets-grid">
           <div>
             <p className="field-label" style={{ marginBottom: 12 }}>
-              CORRECTNESS BY DESIGN
+              BUSINESS CONTEXT
             </p>
             <p className="body-text drop-cap">
-              I gravitate toward backend systems — the places where two
-              databases have to stay in sync, where a transaction either fully
-              completes or doesn't happen at all. At Rock City Motel I built a
-              booking engine where Postgres EXCLUDE constraints make
-              double-bookings structurally impossible, not just unlikely.
+              Working at my family&rsquo;s motel gave me direct experience with
+              the decisions behind a small business. I handled reservations,
+              payments, guest requests, and the daily operational tradeoffs
+              that software is supposed to support. It taught me to understand
+              the business problem before deciding what to build.
             </p>
           </div>
           <div>
             <p className="field-label" style={{ marginBottom: 12 }}>
-              RIGOR OVER NOISE
+              TECHNICAL EXECUTION
             </p>
             <p className="body-text">
-              I'd rather get the foundation right than chase what's trendy —
-              end-to-end TypeScript to catch errors before they hit runtime,
-              and integrations like routing motel payments straight through
-              Stripe instead of a third-party OTA, built on plumbing that holds
-              up under real use.
+              This summer, I turned that operational knowledge into an
+              end-to-end direct-booking platform and property management
+              system. Because I also worked on site, I could translate real
+              workflows into technical decisions, ship changes around staff
+              and guest needs, and evaluate the result in a live business. That
+              combination of business judgment and backend engineering is what
+              I bring to a team.
             </p>
           </div>
         </div>

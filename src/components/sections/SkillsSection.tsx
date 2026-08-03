@@ -9,7 +9,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
     <section id="skills">
       <div className="wrap">
         <div className="section-header-row">
-          <span className="section-badge">II</span>
+          <span className="section-badge">III</span>
           <h2 className="section-header">ARSENAL</h2>
         </div>
 

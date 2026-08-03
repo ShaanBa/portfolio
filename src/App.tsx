@@ -2,6 +2,7 @@ import './styles/global.css';
 import Nav from './components/layout/Nav';
 import Hero from './components/sections/Hero';
 import AboutSection from './components/sections/AboutSection';
+import EducationSection from './components/sections/EducationSection';
 import SkillsSection from './components/sections/SkillsSection';
 import ProjectsSection from './components/sections/ProjectsSection';
 import TimelineSection from './components/sections/TimelineSection';
@@ -40,10 +41,14 @@ export const App = () => {
 
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <Nav />
-      <main>
+      <main id="main-content">
         <Hero />
         <AboutSection />
+        <EducationSection />
         <SkillsSection skills={skills} />
         <ProjectsSection projects={projects} />
         <TimelineSection experiences={experiences} />

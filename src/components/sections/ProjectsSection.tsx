@@ -11,7 +11,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
       <div className="wrap">
         {/* Section Header */}
         <div className="section-header-row">
-          <span className="section-badge">III</span>
+          <span className="section-badge">IV</span>
           <h2 className="section-header">CAMPAIGNS</h2>
         </div>
 

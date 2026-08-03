@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill="#080f0b" d="M8 0h48l8 8v48l-8 8H8l-8-8V8z"/>
+  <path fill="none" stroke="#c9a84c" stroke-width="2" d="M12 7h40l5 5v40l-5 5H12l-5-5V12z"/>
+  <path fill="#1a6b42" d="M32 13 48 20v12c0 10-6.7 16.2-16 20-9.3-3.8-16-10-16-20V20z"/>
+  <text x="32" y="38" fill="#e8e1d4" font-family="Georgia,serif" font-size="19" font-weight="700" text-anchor="middle">SB</text>
+</svg>

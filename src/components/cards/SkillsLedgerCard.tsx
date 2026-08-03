@@ -19,7 +19,7 @@ export const SkillsLedgerCard: React.FC<SkillsLedgerCardProps> = ({ skills }) =>
         <div key={rIdx} className="grid-2">
           {row.map((cat: SkillCategory, cIdx: number) => (
             <div key={cat.category || cIdx} className="skill-cell">
-              <div className="field-label font-mono">{cat.category}</div>
+              <div className="field-label">{cat.category}</div>
               <div className="pill-row">
                 {cat.skills.map((skill: string, sIdx: number) => (
                   <div key={sIdx} className="pill on">{skill}</div>

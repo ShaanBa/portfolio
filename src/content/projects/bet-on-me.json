@@ -5,7 +5,7 @@
   "summary": "Decentralized self-accountability platform using XRP Ledger escrows to route failed stakes to charity, backed by EXIF/GPS proof verification and Gemini Vision.",
   "problem": "Traditional self-accountability apps rely on centralized trust or weak honor systems, making it difficult to enforce financial stakes without risking user fund custody.",
   "approach": "I engineered a non-custodial XRPL escrow pipeline combined with Gemini Vision API and EXIF/GPS metadata parsing to verify proof photos and automatically route forfeited funds directly to charity.",
-  "outcome": "Awarded 1st Place / MLH Winner at HackKU26 for innovative decentralized escrow design.",
+  "outcome": "Won MLH's Best Use of Solana prize at HackKU26 and received a Ledger Nano S Plus. Although BetOnMe was built on XRP Ledger rather than Solana, MLH judges selected it because its non-custodial escrow design fit the challenge's intent.",
   "techStack": [
     "Next.js",
     "React",
@@ -22,5 +22,6 @@
     "Multi-Week Recurring Contracts: Structured pooled-stake escrows covering multi-session commitments where a single missed check-in forfeits the pool to charity."
   ],
   "githubUrl": "https://github.com/alexhlanter/BetOnMeHackKU26",
+  "devpostUrl": "https://devpost.com/software/betonme",
   "completionDate": "April 2026"
 }

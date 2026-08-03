@@ -14,7 +14,7 @@ export const ProjectLedgerCard: React.FC<ProjectLedgerCardProps> = ({ project, i
   return (
     <article className="project-ledger-card panel">
       <header className="card-strip">
-        <span className="strip-label font-mono">{displayIndex}&nbsp;&nbsp;{category}</span>
+        <span className="strip-label">{displayIndex}&nbsp;&nbsp;{category}</span>
       </header>
 
       <div className="card-main">
@@ -35,7 +35,7 @@ export const ProjectLedgerCard: React.FC<ProjectLedgerCardProps> = ({ project, i
           <div className="bullet-ledger">
             {designChoices.map((item: string, bIdx: number) => (
               <div key={bIdx} className="rationale-item font-sans">
-                <span className="item-index font-mono">0{bIdx + 1}</span>
+                <span className="item-index">0{bIdx + 1}</span>
                 <span className="item-text">{item}</span>
               </div>
             ))}
@@ -44,7 +44,7 @@ export const ProjectLedgerCard: React.FC<ProjectLedgerCardProps> = ({ project, i
 
         <div className="tech-stack-row">
           {techStack.map((tech: string, tIdx: number) => (
-            <span key={tIdx} className="pill font-mono">{tech}</span>
+            <span key={tIdx} className="pill">{tech}</span>
           ))}
         </div>
       </div>

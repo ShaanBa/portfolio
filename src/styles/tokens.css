@@ -25,7 +25,6 @@
   /* ---------- TYPOGRAPHY ---------- */
   --font-display:       'Cinzel', serif;
   --font-body:          'Inter', sans-serif;
-  --font-mono:          'JetBrains Mono', monospace;
 
   /* ---------- SHAPE LANGUAGE ---------- */
   --chamfer:            polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);

@@ -1,4 +1,5 @@
 import React from 'react';
+import resumeUrl from '../../content/Shaan Bawa Master Resume.pdf?url';
 
 const Hero: React.FC = () => {
   return (
@@ -7,7 +8,6 @@ const Hero: React.FC = () => {
       className="hero noise-overlay"
     >
       <div className="wrap hero-frame ornamental-corners">
-        <p className="hero-kicker field-label">The Sigil · Software Engineer</p>
         {/* Display title */}
         <h1
           style={{
@@ -69,6 +69,9 @@ const Hero: React.FC = () => {
             rel="noopener noreferrer"
           >
             GitHub
+          </a>
+          <a href={resumeUrl} className="btn-secondary" download>
+            Résumé
           </a>
         </div>
 

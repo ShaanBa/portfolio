@@ -56,10 +56,10 @@ export const Grid: React.FC<GridProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-emerald-900/50 pb-8 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <span className="font-mono text-[11px] lg:text-[12px] bg-[#06140e] text-[#00ff87] border border-emerald-900/50 px-2 py-0.5 rounded-none">
+              <span className="font-sans text-[11px] lg:text-[12px] bg-[#06140e] text-[#00ff87] border border-emerald-900/50 px-2 py-0.5 rounded-none">
                 {sectionNumber}
               </span>
-              <span className="font-mono text-[11px] lg:text-[12px] tracking-[0.25em] uppercase text-[#d4af37]">
+              <span className="font-sans text-[11px] lg:text-[12px] tracking-[0.25em] uppercase text-[#d4af37]">
                 {metaLabel}
               </span>
             </div>
@@ -68,7 +68,7 @@ export const Grid: React.FC<GridProps> = ({
             </h2>
           </div>
 
-          <div className="mt-4 md:mt-0 font-mono text-[11px] tracking-[0.2em] uppercase text-[#dcd8ce]">
+          <div className="mt-4 md:mt-0 font-sans text-[11px] tracking-[0.2em] uppercase text-[#dcd8ce]">
             ASYMMETRIC GRID // EDITORIAL EMBED
           </div>
         </div>
@@ -87,13 +87,13 @@ export const Grid: React.FC<GridProps> = ({
               >
                 <div>
                   <div className="flex justify-between items-center mb-6">
-                    <span className="font-mono text-[11px] tracking-[0.25em] uppercase text-[#d4af37]">
+                    <span className="font-sans text-[11px] tracking-[0.25em] uppercase text-[#d4af37]">
                       0{idx + 1} // {item.category}
                     </span>
                     {item.linkUrl && (
                       <a
                         href={item.linkUrl}
-                        className="font-mono text-xs text-[#00ff87] hover:text-[#d4af37] transition-colors"
+                        className="font-sans text-xs text-[#00ff87] hover:text-[#d4af37] transition-colors"
                       >
                         [EXPLORE &rarr;]
                       </a>
@@ -113,7 +113,7 @@ export const Grid: React.FC<GridProps> = ({
                   {item.metrics && item.metrics.length > 0 && (
                     <div className="mb-6 p-4 bg-[#06140e] border border-[#d4af37]/20 rounded-none space-y-1">
                       {item.metrics.map((m, mIdx) => (
-                        <div key={mIdx} className="font-mono text-xs text-[#00ff87] tracking-wider">
+                        <div key={mIdx} className="font-sans text-xs text-[#00ff87] tracking-wider">
                           &gt; {m}
                         </div>
                       ))}
@@ -125,7 +125,7 @@ export const Grid: React.FC<GridProps> = ({
                       {item.techStack.map((tech, tIdx) => (
                         <span
                           key={tIdx}
-                          className="font-mono text-[10px] uppercase tracking-wider text-[#dcd8ce] bg-[#082c1d] border border-emerald-900/50 px-2 py-1 rounded-none"
+                          className="font-sans text-[10px] uppercase tracking-wider text-[#dcd8ce] bg-[#082c1d] border border-emerald-900/50 px-2 py-1 rounded-none"
                         >
                           {tech}
                         </span>

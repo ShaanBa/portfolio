@@ -14,9 +14,9 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) =>
 
   return (
     <div className="tl-row">
-      <div className="when font-mono">
-        <div className="period font-mono">{period}</div>
-        <div className="loc font-mono">{location}</div>
+      <div className="when">
+        <div className="period">{period}</div>
+        <div className="loc">{location}</div>
       </div>
       <div className="tl-content">
         <h3>{role} &middot; <span className="company">{company}</span></h3>

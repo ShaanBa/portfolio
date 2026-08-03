@@ -4,6 +4,7 @@ export const ProjectSchema = z.object({
   id: z.string(),
   title: z.string(),
   url: z.string().url(),
+  urlLabel: z.string().optional(),
   summary: z.string().max(300),
   problem: z.string().optional(),
   approach: z.string().optional(),
@@ -11,6 +12,7 @@ export const ProjectSchema = z.object({
   techStack: z.array(z.string()),
   designChoices: z.array(z.string()),
   githubUrl: z.string().url().optional(),
+  devpostUrl: z.string().url().optional(),
   completionDate: z.string().optional(),
   category: z.string().optional(),
 });
