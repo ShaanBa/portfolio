@@ -2,6 +2,7 @@
   "id": "rock-city-pms",
   "title": "Rock City Motel PMS & Direct-Booking Site",
   "url": "https://rockcitymotel.com",
+  "urlLabel": "Booking Site",
   "summary": "Full-stack PMS and direct-booking site for a 16-room motel—modernizing paper ops with a live room dashboard, multi-channel intake, and direct Stripe payments to bypass third-party fees.",
   "problem": "A 16-room motel suffered from inefficient paper operations, double-booking risks, and high third-party online travel agency commission fees on guest bookings.",
   "approach": "I built an end-to-end TypeScript PMS using React 19, Fastify, and PostgreSQL with EXCLUDE constraints for ACID transaction guarantees, paired with a direct Stripe payment integration.",

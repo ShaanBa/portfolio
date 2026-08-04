@@ -88,6 +88,43 @@ export function CampaignCard({ project, index }: CampaignCardProps) {
           </div>
         )}
 
+        {project.designChoices.length > 0 && (
+          <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid var(--border-brass)' }}>
+            <p className="field-label" style={{ marginBottom: '12px' }}>
+              KEY DECISIONS
+            </p>
+            <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+              {project.designChoices.map((choice, choiceIndex) => (
+                <li
+                  key={choice}
+                  className="body-text"
+                  style={{
+                    position: 'relative',
+                    paddingLeft: 18,
+                    marginBottom: choiceIndex < project.designChoices.length - 1 ? 10 : 0,
+                    fontSize: 14,
+                    color: 'var(--text-secondary)',
+                  }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      position: 'absolute',
+                      left: 0,
+                      top: '0.55em',
+                      width: 4,
+                      height: 4,
+                      background: 'var(--accent-brass-dim)',
+                      transform: 'rotate(45deg)',
+                    }}
+                  />
+                  {choice}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* Tech Stack */}
         {project.techStack.length > 0 && (
           <div
