@@ -22,5 +22,6 @@
     "Fork-on-Edit Data Pattern: Resolved a live walk-in guest bug by forking guest records on edit rather than mutating a shared template row.",
     "Direct Stripe Integration: Integrated PaymentIntents for public bookings to bypass third-party online travel agency commission fees."
   ],
+  "githubUrl": "https://github.com/ShaanBa/rock-city-pms-source",
   "completionDate": "July 2026"
 }
