@@ -13,6 +13,7 @@ export const ProjectSchema = z.object({
   designChoices: z.array(z.string()),
   githubUrl: z.string().url().optional(),
   devpostUrl: z.string().url().optional(),
+  demoVideoUrl: z.string().url().optional(),
   completionDate: z.string().optional(),
   category: z.string().optional(),
 });

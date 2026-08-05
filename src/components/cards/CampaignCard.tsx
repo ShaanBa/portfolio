@@ -180,6 +180,16 @@ export function CampaignCard({ project, index }: CampaignCardProps) {
               Devpost →
             </a>
           )}
+          {project.demoVideoUrl && (
+            <a
+              className="btn-secondary"
+              href={project.demoVideoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Demo Video →
+            </a>
+          )}
         </div>
       </div>
 
