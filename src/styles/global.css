@@ -538,9 +538,10 @@ section:first-of-type {
 
 .campaign-shot img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #0a0a0a;
   border-bottom: 1px solid var(--border-brass);
 }
 
