@@ -21,6 +21,18 @@
     "Lazy On-Chain Settlement: Designed an on-demand resolution flow executed during app load to finalize past-due bets without background worker crons.",
     "Multi-Week Recurring Contracts: Structured pooled-stake escrows covering multi-session commitments where a single missed check-in forfeits the pool to charity."
   ],
+  "screenshots": [
+    {
+      "src": "/projects/bet-on-me/dashboard.png",
+      "alt": "BetOnMe dashboard showing an active XRP wager and upload proof action",
+      "caption": "Active bet dashboard"
+    },
+    {
+      "src": "/projects/bet-on-me/create-bet.png",
+      "alt": "BetOnMe create-bet form with goal, XRP stake, charity, and map location",
+      "caption": "Create bet flow"
+    }
+  ],
   "githubUrl": "https://github.com/alexhlanter/BetOnMeHackKU26",
   "devpostUrl": "https://devpost.com/software/betonme",
   "demoVideoUrl": "https://www.youtube.com/watch?v=1-Cw7rJpakM",

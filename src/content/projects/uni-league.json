@@ -20,6 +20,18 @@
     "Linearized Rank Ranking Engine: Mapped non-alphabetical game tiers and LP into a unified numeric score for accurate leaderboard sorting in SQL.",
     "UI & Feature Overhaul: Modernized the original Flask/React application architecture by integrating a friend network system and enhanced UI."
   ],
+  "screenshots": [
+    {
+      "src": "/projects/uni-league/landing-page.png",
+      "alt": "Uni-League landing page with collegiate esports hero and call to action",
+      "caption": "Landing page"
+    },
+    {
+      "src": "/projects/uni-league/leaderboard.png",
+      "alt": "Uni-League global standings podium with university player rankings",
+      "caption": "Global standings"
+    }
+  ],
   "githubUrl": "https://github.com/ShaanBa/Uni-League",
   "completionDate": "2026"
 }

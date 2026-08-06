@@ -50,6 +50,19 @@ export function CampaignCard({ project, index }: CampaignCardProps) {
           {project.summary}
         </p>
 
+        {project.screenshots && project.screenshots.length > 0 && (
+          <div className="campaign-shots">
+            {project.screenshots.map((shot) => (
+              <figure key={shot.src} className="campaign-shot">
+                <img src={shot.src} alt={shot.alt} loading="lazy" />
+                {shot.caption && (
+                  <figcaption className="field-label">{shot.caption}</figcaption>
+                )}
+              </figure>
+            ))}
+          </div>
+        )}
+
         {/* Case Study Section */}
         {hasCaseStudy && (
           <div style={{ marginTop: '24px' }}>

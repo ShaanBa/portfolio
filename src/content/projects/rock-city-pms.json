@@ -23,6 +23,28 @@
     "Fork-on-Edit Data Pattern: Resolved a live walk-in guest bug by forking guest records on edit rather than mutating a shared template row.",
     "Direct Stripe Integration: Integrated PaymentIntents for public bookings to bypass third-party online travel agency commission fees."
   ],
+  "screenshots": [
+    {
+      "src": "/projects/rock-city-pms/pms-dashboard.png",
+      "alt": "Rock City PMS room dashboard with color-coded occupancy status",
+      "caption": "Staff room board"
+    },
+    {
+      "src": "/projects/rock-city-pms/pms-walkin-form.png",
+      "alt": "Walk-in booking form with room selection, taxes, and payment method",
+      "caption": "Walk-in booking"
+    },
+    {
+      "src": "/projects/rock-city-pms/web-landing.png",
+      "alt": "Rock City Motel public booking site landing page",
+      "caption": "Public booking site"
+    },
+    {
+      "src": "/projects/rock-city-pms/web-stripe.png",
+      "alt": "Direct Stripe checkout for a Rock City Motel reservation",
+      "caption": "Stripe checkout"
+    }
+  ],
   "githubUrl": "https://github.com/ShaanBa/rock-city-pms-source",
   "completionDate": "July 2026"
 }

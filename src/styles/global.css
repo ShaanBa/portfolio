@@ -522,6 +522,33 @@ section:first-of-type {
   margin-bottom: 8px;
 }
 
+.campaign-shots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.campaign-shot {
+  margin: 0;
+  border: 1px solid var(--border-brass);
+  background: var(--bg-deep);
+  overflow: hidden;
+}
+
+.campaign-shot img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  border-bottom: 1px solid var(--border-brass);
+}
+
+.campaign-shot figcaption {
+  padding: 10px 12px;
+  color: var(--accent-brass);
+}
+
 /* Space between section header row and content */
 .section-header-row {
   display: flex;
@@ -572,6 +599,10 @@ section:first-of-type {
     grid-template-columns: 1fr;
     gap: 32px;
     padding: 24px;
+  }
+
+  .campaign-shots {
+    grid-template-columns: 1fr;
   }
 
   .section-header {

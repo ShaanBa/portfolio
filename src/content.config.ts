@@ -11,6 +11,15 @@ export const ProjectSchema = z.object({
   outcome: z.string().optional(),
   techStack: z.array(z.string()),
   designChoices: z.array(z.string()),
+  screenshots: z
+    .array(
+      z.object({
+        src: z.string(),
+        alt: z.string(),
+        caption: z.string().optional(),
+      }),
+    )
+    .optional(),
   githubUrl: z.string().url().optional(),
   devpostUrl: z.string().url().optional(),
   demoVideoUrl: z.string().url().optional(),
