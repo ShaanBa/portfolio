@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Project } from '../../content.config';
 
 interface CampaignCardProps {
@@ -7,6 +8,8 @@ interface CampaignCardProps {
 
 export function CampaignCard({ project, index }: CampaignCardProps) {
   const hasCaseStudy = project.problem || project.approach || project.outcome;
+  const hasScreenshots = project.screenshots && project.screenshots.length > 0;
+  const [activeShot, setActiveShot] = useState(0);
 
   return (
     <>
@@ -50,16 +53,39 @@ export function CampaignCard({ project, index }: CampaignCardProps) {
           {project.summary}
         </p>
 
-        {project.screenshots && project.screenshots.length > 0 && (
-          <div className="campaign-shots">
-            {project.screenshots.map((shot) => (
-              <figure key={shot.src} className="campaign-shot">
-                <img src={shot.src} alt={shot.alt} loading="lazy" />
-                {shot.caption && (
-                  <figcaption className="field-label">{shot.caption}</figcaption>
-                )}
-              </figure>
-            ))}
+        {/* Screenshot Gallery */}
+        {hasScreenshots && (
+          <div className="campaign-gallery" style={{ marginTop: '24px' }}>
+            {/* Featured Image */}
+            <figure className="gallery-featured">
+              <img
+                src={project.screenshots![activeShot].src}
+                alt={project.screenshots![activeShot].alt}
+                loading="lazy"
+              />
+              {project.screenshots![activeShot].caption && (
+                <figcaption className="field-label">
+                  {project.screenshots![activeShot].caption}
+                </figcaption>
+              )}
+            </figure>
+
+            {/* Thumbnail Strip */}
+            {project.screenshots!.length > 1 && (
+              <div className="gallery-thumbs">
+                {project.screenshots!.map((shot, i) => (
+                  <button
+                    key={shot.src}
+                    className={`gallery-thumb${i === activeShot ? ' active' : ''}`}
+                    onClick={() => setActiveShot(i)}
+                    aria-label={`View: ${shot.caption || shot.alt}`}
+                    type="button"
+                  >
+                    <img src={shot.src} alt={shot.alt} loading="lazy" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
@@ -213,3 +239,4 @@ export function CampaignCard({ project, index }: CampaignCardProps) {
 }
 
 export default CampaignCard;
+

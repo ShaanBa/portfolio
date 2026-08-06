@@ -522,32 +522,71 @@ section:first-of-type {
   margin-bottom: 8px;
 }
 
-.campaign-shots {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 24px;
+/* ==========================================================================
+   CAMPAIGN GALLERY — Featured image + thumbnail strip
+   ========================================================================== */
+
+.campaign-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.campaign-shot {
+/* Featured (large) image */
+.gallery-featured {
   margin: 0;
   border: 1px solid var(--border-brass);
   background: var(--bg-deep);
   overflow: hidden;
 }
 
-.campaign-shot img {
+.gallery-featured img {
   width: 100%;
   height: auto;
+  max-height: 420px;
   display: block;
   object-fit: contain;
-  background: #0a0a0a;
-  border-bottom: 1px solid var(--border-brass);
+  background: #080808;
 }
 
-.campaign-shot figcaption {
-  padding: 10px 12px;
+.gallery-featured figcaption {
+  padding: 10px 14px;
   color: var(--accent-brass);
+  border-top: 1px solid var(--border-brass);
+}
+
+/* Thumbnail strip */
+.gallery-thumbs {
+  display: flex;
+  gap: 8px;
+}
+
+.gallery-thumb {
+  flex: 1;
+  max-width: 120px;
+  padding: 0;
+  border: 1px solid var(--border-brass);
+  background: var(--bg-deep);
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast), border-color var(--transition-fast);
+}
+
+.gallery-thumb:hover {
+  opacity: 0.8;
+}
+
+.gallery-thumb.active {
+  opacity: 1;
+  border-color: var(--accent-brass);
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 60px;
+  display: block;
+  object-fit: cover;
 }
 
 /* Space between section header row and content */
@@ -602,8 +641,16 @@ section:first-of-type {
     padding: 24px;
   }
 
-  .campaign-shots {
-    grid-template-columns: 1fr;
+  .gallery-thumbs {
+    gap: 6px;
+  }
+
+  .gallery-thumb {
+    max-width: 80px;
+  }
+
+  .gallery-thumb img {
+    height: 48px;
   }
 
   .section-header {
